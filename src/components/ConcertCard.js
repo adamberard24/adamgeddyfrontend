@@ -1,13 +1,29 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
-function ConcertCard({ venue, cost, artist_id, day}){
+
+function ConcertCard({ venue, cost, artist_id, day, name}){
+
+const [favorite, setFavorite] = useState(false)
+
+
+    
+
     
 return (
 <li classname="card">
-<h4>{artist_id}</h4>
+<h1>Artist: {name}</h1>
 <p>Cost: {cost}</p>
 <p>Venue: {venue}</p>
 <p>Date: {day}</p>
+    <div>
+        {favorite ? (
+      <button onClick = {()=> setFavorite(true)} >Remove from Favorites</button>      
+        ) : (
+<button onclick = {()=> setFavorite(false)} >Add to favorites</button> )}
+    </div>
+
+
+
 
 
 
@@ -15,6 +31,8 @@ return (
 
 )
 
-}
+        }
+
+
 
 export default ConcertCard

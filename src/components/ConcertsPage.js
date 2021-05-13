@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import ConcertList from './ConcertList'
-function ConcertsPage(){
+function ConcertsPage({artists}){
     const [concerts, setConcerts] = useState([])
 
 useEffect(() => {
@@ -12,9 +12,12 @@ fetch("http://localhost:9292/concerts")
 })
 }, [])
 
+console.log(artists)
+
 return (
     <ConcertList
-    concerts={concerts}/>
+    concerts={concerts}
+    artists = {artists}/>
 )
 }
 

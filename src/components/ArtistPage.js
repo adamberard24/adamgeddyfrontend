@@ -6,12 +6,13 @@ function ArtistPage(){
     const[followers, setFollowers] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:9292/artists")
-        .then(res => res.json())
-        .then(artistArr => {
-            console.log(artistArr)
-            setArtists(artistArr)
-        })
+    //     fetch("http://localhost:9292/artists")
+    //     .then(res => res.json())
+    //     .then(artistArr => {
+    //         console.log(artistArr)
+
+    //         setArtists(artistArr)
+    //     })
         fetch("http://localhost:9292/followers")
         .then(res => res.json())
         .then(followersArr => {
