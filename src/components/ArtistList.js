@@ -1,6 +1,8 @@
 import React from 'react'
 import ArtistCard from './ArtistCard'
-function ArtistList({artists, followers}){
+function ArtistList({deleteArtist, artists, followers}){
+
+  
 
     const artistCards = artists.map((artistObj) => {
       const numberOfFollowers = followers.filter(follower => follower.artist_id === artistObj.id).length
@@ -9,6 +11,8 @@ function ArtistList({artists, followers}){
             key={artistObj.id}
             name={artistObj.name}
             followers={numberOfFollowers}
+            deleteArtist={deleteArtist}
+            id={artistObj.id}
             
             />
 
