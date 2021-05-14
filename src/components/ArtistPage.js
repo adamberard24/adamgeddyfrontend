@@ -13,7 +13,7 @@ function ArtistPage(){
         .then(res => res.json())
         .then(artistArr => {
             console.log(artistArr)
-
+ 
             setArtists(artistArr)
         })
         
