@@ -27,6 +27,8 @@ function ArtistPage(){
 
 }, [])
 
+
+
 function handleAddNewArtist(newArtist){
 
     const updatedArtists = [...artists, newArtist]
@@ -34,12 +36,19 @@ function handleAddNewArtist(newArtist){
     setArtists(updatedArtists)
     }
 
+    function handleDeleteArtist (artistID){
+
+     let deletedArtistArr = artists.filter(artist => artist.id !== artistID)
+     setArtists(deletedArtistArr)
+    }
+    
 return (
 
     <div>
 <ArtistList
 artists={artists}
-followers={followers}/>
+followers={followers}
+deleteArtist={handleDeleteArtist}/>
 
 <AddNewArtist onAddNewArtist={handleAddNewArtist}/>
 
